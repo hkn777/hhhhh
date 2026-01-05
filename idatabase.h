@@ -43,6 +43,16 @@ public:
     QSqlTableModel *patientTabModel;
     QItemSelectionModel *thePatientSelection;
 
+
+    bool initBookModel();
+    bool searchBook(QString filter);
+    void deleteCurrentBook();
+    bool submitBookEdit();
+    void revertBookEdit();
+
+    QSqlTableModel *bookTabModel;
+    QItemSelectionModel *theBookSelection;
+
 };
 
 #endif // IDATABASE_H

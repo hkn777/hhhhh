@@ -48,13 +48,14 @@ void MasterView::goDepartmentView()
     pushWidgetToStackView(departmentView);
 }
 
+
 void MasterView::goDoctorView()
 {
     qDebug()<<"goDoctorView";
     doctorView =new DoctorView(this);
     pushWidgetToStackView(doctorView);
 
-
+    connect(doctorView,SIGNAL(goBookEditView()),this,SLOT(goBookEditView()));
 }
 void MasterView::goPatientView()
 {

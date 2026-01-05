@@ -65,6 +65,19 @@ void IDatabase::revertPatientEdit()
     patientTabModel->revertAll();
 }
 
+bool IDatabase::initBookModel()
+{
+    bookTabModel =new QSqlTableModel(this,database);
+    bookTabModel->setTable("book");
+    bookTabModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    bookTabModel->setSort(bookTabModel->fieldIndex("name"),Qt::AscendingOrder);//排序
+    if(!(bookTabModel->select()))
+        return false;
+
+    theBookSelection =new QItemSelectionModel(bookTabModel);
+    return true;
+}
+
 QString IDatabase::userLogin(QString userName, QString password)
 {
     QSqlQuery query;
