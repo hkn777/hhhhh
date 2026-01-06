@@ -1,7 +1,7 @@
 #include "patienteditview.h"
 #include "ui_patienteditview.h"
 #include <QSqlTableModel>
-#include"idatabase.h"
+#include "idatabase.h"
 
 PatientEditView::PatientEditView(QWidget *parent,int index)
     : QWidget(parent)

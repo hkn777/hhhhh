@@ -34,7 +34,7 @@ public slots:
     void goPatientView();
     void goPreviousView();
 
-    void goBookEditView();
+    void goBookEditView(int rowNo);
 
 private slots:
     void on_btBack_clicked();

@@ -40,7 +40,20 @@ int IDatabase::addNewPatient()
     return curIndex.row();
 
 }
+int IDatabase::addNewBook()
+{
+    bookTabModel->insertRow(bookTabModel->rowCount(),QModelIndex());
+    QModelIndex curIndex =bookTabModel->index(bookTabModel->rowCount()-1,1);//创建最后一行的ModelIndex
 
+    int curRecNo =curIndex.row();
+    QSqlRecord curRec =bookTabModel->record(curRecNo);
+    curRec.setValue("CREATEDTIMESTAMP",QDateTime::currentDateTime().toString("yyyy-MM-dd"));
+    curRec.setValue("ID",QUuid::createUuid().toString(QUuid::WithoutBraces));
+
+    bookTabModel->setRecord(curRecNo,curRec);
+
+    return curIndex.row();
+}
 bool IDatabase::searchPatient(QString filter)
 {
     patientTabModel->setFilter(filter);
@@ -76,6 +89,32 @@ bool IDatabase::initBookModel()
 
     theBookSelection =new QItemSelectionModel(bookTabModel);
     return true;
+}
+
+
+
+bool IDatabase::searchBook(QString filter)
+{
+    bookTabModel->setFilter(filter);
+    return bookTabModel->select();
+}
+
+void IDatabase::deleteCurrentBook()
+{
+    QModelIndex curIndex = theBookSelection->currentIndex();
+    bookTabModel->removeRow(curIndex.row());
+    bookTabModel->submitAll();
+    bookTabModel->select();
+}
+
+bool IDatabase::submitBookEdit()
+{
+    return bookTabModel->submitAll();
+}
+
+void IDatabase::revertBookEdit()
+{
+    bookTabModel->revertAll();
 }
 
 QString IDatabase::userLogin(QString userName, QString password)

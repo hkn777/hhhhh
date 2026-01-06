@@ -25,7 +25,7 @@ private slots:
     void on_btDelete_clicked();
 
 signals:
-    void goBookEditView();
+    void goBookEditView(int idx);
 
 private:
     Ui::DoctorView *ui;

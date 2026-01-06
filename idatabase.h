@@ -45,6 +45,7 @@ public:
 
 
     bool initBookModel();
+    int addNewBook();
     bool searchBook(QString filter);
     void deleteCurrentBook();
     bool submitBookEdit();
