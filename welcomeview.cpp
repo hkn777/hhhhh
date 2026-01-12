@@ -18,10 +18,7 @@ WelcomeView::~WelcomeView()
 
 
 
-void WelcomeView::on_btDepartment_clicked()
-{
-    emit goDepartmentView();
-}
+
 
 
 void WelcomeView::on_btDoctor_clicked()
@@ -33,5 +30,13 @@ void WelcomeView::on_btDoctor_clicked()
 void WelcomeView::on_btPatient_clicked()
 {
     emit goPatientView();
+}
+
+
+
+
+void WelcomeView::on_btBorrow_clicked()
+{
+    emit goBorrowView();
 }
 

@@ -10,7 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     bookeditview.cpp \
-    departmentview.cpp \
+    borrowview.cpp \
     doctorview.cpp \
     idatabase.cpp \
     loginview.cpp \
@@ -22,7 +22,7 @@ SOURCES += \
 
 HEADERS += \
     bookeditview.h \
-    departmentview.h \
+    borrowview.h \
     doctorview.h \
     idatabase.h \
     loginview.h \
@@ -33,7 +33,6 @@ HEADERS += \
 
 FORMS += \
     bookeditview.ui \
-    departmentview.ui \
     doctorview.ui \
     loginview.ui \
     masterview.ui \

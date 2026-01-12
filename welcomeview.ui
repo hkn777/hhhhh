@@ -30,7 +30,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="btDepartment">
+      <widget class="QPushButton" name="btBorrow">
        <property name="text">
         <string>借还书管理</string>
        </property>

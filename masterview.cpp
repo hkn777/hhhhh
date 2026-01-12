@@ -37,15 +37,16 @@ void MasterView::goWelcomView()
     pushWidgetToStackView(welcomeView);
 
     connect(welcomeView,SIGNAL(goDoctorView()),this,SLOT(goDoctorView()));
-    connect(welcomeView,SIGNAL(goDepartmentView()),this,SLOT(goDepartmentView()));
+    connect(welcomeView,SIGNAL(goBorrowView()),this,SLOT(goBorrowView()));
     connect(welcomeView,SIGNAL(goPatientView()),this,SLOT(goPatientView()));
 }
 
-void MasterView::goDepartmentView()
+// 添加 goBorrowView 函数
+void MasterView::goBorrowView()
 {
-    qDebug()<<"goDepartmentView";
-    departmentView =new DepartmentView(this);
-    pushWidgetToStackView(departmentView);
+    qDebug() << "goBorrowView";
+    borrowView = new BorrowView(this);
+    pushWidgetToStackView(borrowView);
 }
 
 

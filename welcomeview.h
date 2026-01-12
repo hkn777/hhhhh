@@ -18,16 +18,21 @@ public:
 private slots:
 
 
-    void on_btDepartment_clicked();
+
 
     void on_btDoctor_clicked();
 
     void on_btPatient_clicked();
 
+
+
+    void on_btBorrow_clicked();
+
 signals:
     void goDepartmentView();
     void goDoctorView();
     void goPatientView();
+    void goBorrowView();
 
 private:
     Ui::WelcomeView *ui;
