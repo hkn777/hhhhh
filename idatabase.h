@@ -1,4 +1,4 @@
- #ifndef IDATABASE_H
+#ifndef IDATABASE_H
 #define IDATABASE_H
 
 #include <QObject>
@@ -51,8 +51,15 @@ public:
     bool submitBookEdit();
     void revertBookEdit();
 
+    // 新增：借还书相关函数
+    bool borrowBook(int row);
+    bool returnBook(int row);
+
     QSqlTableModel *bookTabModel;
     QItemSelectionModel *theBookSelection;
+
+    QSqlTableModel* getBookModel() { return bookTabModel; }
+    QItemSelectionModel* getBookSelectionModel() { return theBookSelection; }
 
 };
 
